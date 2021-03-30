@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUIAPODApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ApodMainView()
         }
     }
 }
