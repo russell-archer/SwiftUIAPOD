@@ -9,12 +9,11 @@ import SwiftUI
 
 struct ApodMainView: View {
     
+    @State private var allowDateEdits = true  // If nImages > 1 the API won't allow you to specify date(s)
     @State private var requestDate = Date()
     @State private var nImages = 1.0
-    @State private var allowDateEdits = true  // If nImages > 1 the API won't allow you to specify date(s)
-    @State private var showProgress = false
-    @State private var apodModel: [ApodModel] = []
     @State private var triggerNavigation = false
+    @State private var showAlert = false
     
     var body: some View {
         
@@ -27,17 +26,16 @@ struct ApodMainView: View {
                 Spacer()
                 
                 // Request the APOD data. When it arrives trigger programmatic navigation to the list view
-                DataButtonView(showProgress: $showProgress,
-                               requestDate: $requestDate,
-                               nImages: $nImages,
-                               apodModel: $apodModel,
-                               triggerNavigation: $triggerNavigation)
+                DataButtonView(requestDate: $requestDate, nImages: $nImages, triggerNavigation: $triggerNavigation, showAlert: $showAlert)
                 
-                NavigationLink(destination: ApodListView(apodModel: apodModel), isActive: $triggerNavigation) {}
+                NavigationLink(destination: ApodListView(), isActive: $triggerNavigation) {}
                 .navigationBarTitle("NASA APOD")
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Error"), message: Text("Unable to get data for the selected date."), dismissButton: .default(Text("OK")))
+        }
     }
 }
 

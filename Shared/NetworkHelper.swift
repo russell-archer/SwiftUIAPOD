@@ -8,7 +8,7 @@
 import Foundation
 
 struct NetworkHelper {
-    
+
     /// Requests APOD image data from the NASA APOD API.
     /// Note that if `count` is > 1 the value of `date` is ignored and `count` random APOD images are requested.
     /// - Parameters:
@@ -18,7 +18,7 @@ struct NetworkHelper {
     static func requestApodData(date: String? = nil,
                                 count: Int = 1,
                                 handler: @escaping ((Result<[ApodModel]?, NetworkingHelperError>) -> Void)) {
-        
+                
         let url = NetworkHelper.buildQuery(date: date, count: count)
         guard url != nil else {
             print("Can't build query: bad params")

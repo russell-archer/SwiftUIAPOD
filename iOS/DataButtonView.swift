@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct DataButtonView: View {
-    @Binding var showProgress: Bool
+    @State private var showProgress = false
+    
     @Binding var requestDate: Date
     @Binding var nImages: Double
-    @Binding var apodModel: [ApodModel]
     @Binding var triggerNavigation: Bool
+    @Binding var showAlert: Bool
+    
+    @EnvironmentObject var repo: DataRepository
     
     var body: some View {
         Button(action: {
@@ -28,10 +31,11 @@ struct DataButtonView: View {
                 
                 switch result {
                     case .failure(let error):
-                        print("**** Error: \(error)")
+                        print("Networkhelper error: \(error)")
+                        showAlert = true
                         
                     case .success(let data):
-                        apodModel = data!
+                        repo.data = data!
                         triggerNavigation = true
                 }
             }

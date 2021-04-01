@@ -11,12 +11,6 @@ struct ApodDetailView: View {
     
     var apodData: ApodModel
     
-    static let displayDateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        return formatter
-    }()
-    
     var body: some View {
         
         VStack {
@@ -54,6 +48,7 @@ struct ApodDetailView: View {
 
 struct ApodDetailView_Previews: PreviewProvider {
     static var previews: some View {
+        
         ApodDetailView(apodData: ApodModel(date: "2021-03-24",
                                            explanation: "Why does so much of Jupiter's lightning occur near its poles? Similar to Earth, Jupiter experiences both aurorae and lightning.",
                                            hdurl: "https://apod.nasa.gov/apod/image/2103/AuroraLightningJupiter_Juno_1629.jpg",

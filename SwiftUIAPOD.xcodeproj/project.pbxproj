@@ -19,6 +19,8 @@
 		688EB1BF260BB5EF003BDBAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 688EB1A9260BB5EF003BDBAF /* Assets.xcassets */; };
 		688ED5822610024800E8FDCD /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688ED5812610024800E8FDCD /* DatePickerView.swift */; };
 		68998E5726133A6F00FD43BF /* ApodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68998E5626133A6F00FD43BF /* ApodListView.swift */; };
+		68A5727D26164C25005984E5 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A5727C26164C25005984E5 /* DataRepository.swift */; };
+		68A5727E26164C25005984E5 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A5727C26164C25005984E5 /* DataRepository.swift */; };
 		68B5CEE9260CF207004818B5 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5CEE8260CF207004818B5 /* NetworkHelper.swift */; };
 		68B5CEEA260CF207004818B5 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5CEE8260CF207004818B5 /* NetworkHelper.swift */; };
 		68DFCE0E260FAA7800B2E6B4 /* ApodMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFCE0D260FAA7800B2E6B4 /* ApodMainView.swift */; };
@@ -26,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		682F652B2610F86400BDC794 /* ApodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodDetailView.swift; sourceTree = "<group>"; };
+		6849C0FC2613E42700C8462E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		685AB7C8260BFF9D002DF5BC /* ApodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodModel.swift; sourceTree = "<group>"; };
 		6862873E261377AF00A1990A /* DataButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataButtonView.swift; sourceTree = "<group>"; };
 		686287452613792900A1990A /* ImageCountSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCountSliderView.swift; sourceTree = "<group>"; };
@@ -39,6 +42,7 @@
 		688EB1B9260BB5EF003BDBAF /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		688ED5812610024800E8FDCD /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		68998E5626133A6F00FD43BF /* ApodListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApodListView.swift; sourceTree = "<group>"; };
+		68A5727C26164C25005984E5 /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		68B5CEE8260CF207004818B5 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		68DFCE0D260FAA7800B2E6B4 /* ApodMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +68,7 @@
 		688EB1A1260BB5EE003BDBAF = {
 			isa = PBXGroup;
 			children = (
+				6849C0FC2613E42700C8462E /* README.md */,
 				688EB1A6260BB5EE003BDBAF /* Shared */,
 				688EB1B0260BB5EF003BDBAF /* iOS */,
 				688EB1B7260BB5EF003BDBAF /* macOS */,
@@ -75,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				685AB7C8260BFF9D002DF5BC /* ApodModel.swift */,
+				68A5727C26164C25005984E5 /* DataRepository.swift */,
 				68B5CEE8260CF207004818B5 /* NetworkHelper.swift */,
 				688EB1A7260BB5EE003BDBAF /* SwiftUIAPODApp.swift */,
 				688EB1A9260BB5EF003BDBAF /* Assets.xcassets */,
@@ -214,6 +220,7 @@
 			files = (
 				6862873F261377AF00A1990A /* DataButtonView.swift in Sources */,
 				68998E5726133A6F00FD43BF /* ApodListView.swift in Sources */,
+				68A5727D26164C25005984E5 /* DataRepository.swift in Sources */,
 				688ED5822610024800E8FDCD /* DatePickerView.swift in Sources */,
 				68DFCE0E260FAA7800B2E6B4 /* ApodMainView.swift in Sources */,
 				6862874D26137A9000A1990A /* TodayButtonView.swift in Sources */,
@@ -230,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				685AB7CA260BFF9D002DF5BC /* ApodModel.swift in Sources */,
+				68A5727E26164C25005984E5 /* DataRepository.swift in Sources */,
 				68B5CEEA260CF207004818B5 /* NetworkHelper.swift in Sources */,
 				688EB1BB260BB5EF003BDBAF /* SwiftUIAPODApp.swift in Sources */,
 			);

@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ApodListView: View {
     
-    @State var apodModel: [ApodModel] = []
+    @EnvironmentObject var repo: DataRepository
     
     var body: some View {
         
         VStack {
             
-            List(apodModel) { apodItem in
+            List(repo.data) { apodItem in
                 
                 // Because we aren't embedding this NavigationLink in a NavigationView
                 // we use our parent's (ApodMainView) NavigationView. This avoids the
@@ -52,13 +52,18 @@ struct ApodListView: View {
 }
 
 struct ApodListView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        ApodListView(apodModel: [ApodModel(date: "2021-03-24",
-                                           explanation: "Why does so much of Jupiter's lightning occur near its poles? Similar to Earth, Jupiter experiences both aurorae and lightning.",
-                                           hdurl: "https://apod.nasa.gov/apod/image/2103/AuroraLightningJupiter_Juno_1629.jpg",
-                                           mediaType: "image",
-                                           serviceVersion: "v1",
-                                           title: "Aurorae and Lightning on Jupiter",
-                                           url: "https://apod.nasa.gov/apod/image/2103/AuroraLightningJupiter_Juno_1080.jpg")])
+
+        let dr = DataRepository()
+        dr.data.append(ApodModel(date: "2021-03-24",
+                                 explanation: "Why does so much of Jupiter's lightning occur near its poles?",
+                                 hdurl: "https://apod.nasa.gov/apod/image/2103/AuroraLightningJupiter_Juno_1629.jpg",
+                                 mediaType: "image",
+                                 serviceVersion: "v1",
+                                 title: "Aurorae and Lightning on Jupiter",
+                                 url: "https://apod.nasa.gov/apod/image/2103/AuroraLightningJupiter_Juno_1080.jpg"))
+        
+        return ApodListView().environmentObject(dr)
     }
 }
