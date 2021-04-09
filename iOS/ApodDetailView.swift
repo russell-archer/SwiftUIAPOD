@@ -27,8 +27,12 @@ struct ApodDetailView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding()
+                    .overlay(Rectangle()
+                                .stroke(Color.white, lineWidth: 4)
+                                .shadow(radius: 7)
+                                .padding())
             }
-            
+
             Text(apodData.explanation)
                 .padding()
                 .minimumScaleFactor(0.3)
@@ -56,5 +60,6 @@ struct ApodDetailView_Previews: PreviewProvider {
                                            serviceVersion: "v1",
                                            title: "Aurorae and Lightning on Jupiter",
                                            url: "https://apod.nasa.gov/apod/image/2103/AuroraLightningJupiter_Juno_1080.jpg"))
+            .preferredColorScheme(.light)
     }
 }
