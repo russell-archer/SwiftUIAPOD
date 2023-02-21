@@ -22,17 +22,27 @@ struct ApodDetailView: View {
                 .font(.title2)
                 .padding()
             
-            Link(destination: URL(string: apodData.hdurl)!) {
-                Image(uiImage: self.downloadImage(url: apodData.url))
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+            if URL(string: apodData.hdurl) != nil {
+                Link(destination: URL(string: apodData.hdurl)!) {
+                    Image(uiImage: self.downloadImage(url: apodData.url))
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding()
+                        .overlay(Rectangle()
+                                    .stroke(Color.white, lineWidth: 4)
+                                    .shadow(radius: 7)
+                                    .padding())
+                }
+            } else {
+                
+                Text("Unable to load image")
+                    .font(.title3)
+                    .foregroundColor(.red)
                     .padding()
-                    .overlay(Rectangle()
-                                .stroke(Color.white, lineWidth: 4)
-                                .shadow(radius: 7)
-                                .padding())
+                
+                Image("OwlSmall")
             }
-
+            
             Text(apodData.explanation)
                 .padding()
                 .minimumScaleFactor(0.3)
